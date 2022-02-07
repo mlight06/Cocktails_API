@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Cocktails from './Cocktails';
 
 export default function App() {
@@ -6,7 +6,14 @@ export default function App() {
   const { cocktailData, setCocktailData } = useState([]);
   const { selectedAlcohol, setSelectedAlcohol } = useState('');
   const alcohols = ['Gin', 'Tequila', 'Rum', 'Whiskey', 'Vodka'];
+
+  function handleOnChange(e) {
+    console.log('e', e, e.target.value);
+    setSelectedAlcohol(e.target.value);
+    // invoke axios request, set cocktailData
+  }
   return (
+
     <div>
       <div id="welcome">Welcome!</div>
       <div id="getstarted">
@@ -14,9 +21,9 @@ export default function App() {
         base from the drop down below
 
       </div>
-      <select name="alcoholList" value={selectedAlcohol}>
-        {alcohols.map((alcohol, index) => (
-          <option value="option1">{alcohol}</option>
+      <select name="alcoholList" onChange={(e) => handleOnChange(e)}>
+        {alcohols.map((alcohol) => (
+          <option value={alcohol}>{alcohol}</option>
         ))}
       </select>
       <div id="cocktails">

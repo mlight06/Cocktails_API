@@ -2,16 +2,17 @@ import React from 'react';
 import axios from 'axios';
 
 export default class Cocktails extends React.Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
-      alochol: '',
+      // alochol: this.props.selectedAlcohol,
     };
   }
 
-  getCocktails() {
-    axios.get('https://the-cocktail-db.p.rapidapi.com/filter.php');
-  }
+  // console.log('props', props)
+  // getCocktails() {
+  //   axios.get('https://the-cocktail-db.p.rapidapi.com/filter.php');
+  // }
 
   render() {
     return (
