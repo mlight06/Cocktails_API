@@ -1,15 +1,23 @@
 import React from 'react';
+import axios from 'axios';
 
-export default class Cocktails {
+export default class Cocktails extends React.Component {
   constructor() {
+    super();
     this.state = {
-
+      alochol: '',
     };
   }
 
+  getCocktails() {
+    axios.get('https://the-cocktail-db.p.rapidapi.com/filter.php');
+  }
+
   render() {
-    <div>
-      hi
-    </div>;
+    return (
+      <div>
+        hi
+      </div>
+    );
   }
 }
