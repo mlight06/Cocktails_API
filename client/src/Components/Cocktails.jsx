@@ -1,9 +1,15 @@
 import React from 'react';
 
-export default function Cocktails() {
-  return (
+export default class Cocktails {
+  constructor() {
+    this.state = {
+
+    };
+  }
+
+  render() {
     <div>
-      cocktails
-    </div>
-  );
+      hi
+    </div>;
+  }
 }
